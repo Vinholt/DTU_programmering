@@ -9,14 +9,12 @@
 #include <avr/interrupt.h>
 #include "I2C.h"
 #include "ssd1306.h"
+#include "dipswitch.h"
 
-char readDIP(char dip_reg);
+
 void on_btn_push();
-void print_dip_pos();
-
 
 volatile char intr_flag = 0; // interrupt flag
-
 
 void init() {
 	I2C_Init();
@@ -40,13 +38,12 @@ void init() {
 	PORTK = 0xFF; // 1111 1111
 }
 
-
 int main(void)
 {
 	init();
 	sei(); // global interrupt enable
 	
-	print_dip_pos();
+	print_dip_pos(PINK);
 	sendCharXY('1',3,1);
 
 	while (1)
@@ -62,13 +59,6 @@ int main(void)
 
 ISR(INT4_vect) { // Interupt Service Routine (INT4)
   intr_flag = 1;
-}
-
-
-char readDIP(char dip_reg) {
-	char dip_byte;
-	dip_byte =~ dip_reg;
-	return dip_byte;
 }
 
 
@@ -93,15 +83,8 @@ void on_btn_push() {
 	}
 	c_buffer = '1' + num;
 	sendCharXY(c_buffer,3,1);
+
+	print_dip_pos(PINK);
 }
 
 
-void print_dip_pos() {
-	char c_buffer = readDIP(PINK);
-	char c;
-
-	for (int i=0; i<8; i++) {
-		c = '0' + !!(c_buffer & (1 << i));
-		sendCharXY(c,2,11-i);
-	}
-}
