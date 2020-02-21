@@ -43,7 +43,6 @@ void init() {
 
 int main(void)
 {
-    char btn;
 	init();
 	sei(); // global interrupt enable
 	
