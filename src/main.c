@@ -4,7 +4,7 @@
  		Opgave 2
 ----------------------------
 
-Oscar Vinholt
+Oscar Emil Vinholt s182500
 Mehrdad
 Kasper Nyhus Kaae s195087
 
