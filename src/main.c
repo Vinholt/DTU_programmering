@@ -4,7 +4,7 @@
  		Opgave 2
 ----------------------------
 
-Oscar 
+Oscar Vinholt
 Mehrdad
 Kasper Nyhus Kaae s195087
 
