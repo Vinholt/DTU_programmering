@@ -1,1 +1,0 @@
-char check_btn(char _reg, char _pin);
