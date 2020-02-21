@@ -5,10 +5,10 @@
  */ 
 
 #include <avr/io.h>
+#include <util/delay.h>
+#include <avr/interrupt.h>
 #include "I2C.h"
 #include "ssd1306.h"
-#include <util/delay.h>
-
 
 char readDIP(char dip_reg);
 void on_btn_push();
@@ -60,6 +60,9 @@ int main(void)
 }
 
 
+ISR(INT4_vect) { // Interupt Service Routine (INT4)
+  intr_flag = 1;
+}
 
 
 char readDIP(char dip_reg) {
