@@ -33,7 +33,6 @@ void init() {
 	EICRB &=~ (1<<ISC40); // 0      NOTE: trigger on FALLING edge
 	EIMSK |= (1<<INT4);   // enable INT4
 
-	// Pushbutton
 	// set PE4 as INPUT PULLUP
 	DDRE &=~ (1<<4); // set PE4 INPUT 0
 	PORTE |= (1<<4); // set PE4 PULLUP 1
