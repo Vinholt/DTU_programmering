@@ -52,7 +52,7 @@ int main(void)
 	while (1)
     {
 		if (intr_flag == 1) {
-			_delay_ms(20);
+			_delay_ms(80);
 			intr_flag = 0;
 			on_btn_push();
       }
@@ -77,7 +77,7 @@ void on_btn_push() {
 	char c_buffer;
 	static char c_array[] = {' ', ' ', ' ', '\0'};
 
-	sendStrXY("     ",4,3);
+	sendStrXY("     ",5,6);
 	c_buffer = readDIP(PINK);
 	c_array[num] = c_buffer;
 	sendCharXY(c_buffer,3,6+num);
