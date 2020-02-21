@@ -1,8 +1,14 @@
 /*
- * 
- * Kasper Nyhus Kaae
- * s195087
- */ 
+----------------------------
+ Datateknik & programmering 
+ 		Opgave 2
+----------------------------
+
+Oscar 
+Mehrdad
+Kasper Nyhus Kaae s195087
+
+*/ 
 
 #include <avr/io.h>
 #include <util/delay.h>
