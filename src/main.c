@@ -52,6 +52,7 @@ int main(void)
 	while (1)
     {
 		if (intr_flag == 1) {
+			_delay_ms(20);
 			intr_flag = 0;
 			on_btn_push();
       }
